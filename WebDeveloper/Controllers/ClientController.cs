@@ -13,7 +13,7 @@ namespace WebDeveloper.Controllers
         public ActionResult Index()
         {
             var client = new ClientData();
-            return View(client.GetFakeData());
+            return View(client.GetList());
         }
     }
 }

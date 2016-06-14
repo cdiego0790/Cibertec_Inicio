@@ -15,5 +15,17 @@ namespace WebDeveloper.DataAccess
                 new Client {ID=2, Name="Raul", LastName="Ruidiaz" }
             };
         }
+
+
+        public List<Client> GetList()
+        {
+            using (var dbContext = new WebContextDb())
+            {
+                return dbContext.Clients.ToList();
+            }
+                
+        }
+
+
     }
 }

@@ -8,7 +8,7 @@ namespace WebDeveloper.DataAccess
     {
         public WebContextDb() : base("name=webDeveloperConnectionString")
         {
-
+            //Database.SetInitializer(new WebDeveloperInitializer());
         }
         public DbSet<Client> Clients { get; set; }
 

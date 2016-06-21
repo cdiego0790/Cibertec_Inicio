@@ -49,9 +49,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDataAccess.cs" />
     <Compile Include="ClientData.cs" />
+    <Compile Include="IDataAccess.cs" />
+    <Compile Include="Migrations\201606140323220_InitialCreate.cs" />
+    <Compile Include="Migrations\201606140323220_InitialCreate.Designer.cs">
+      <DependentUpon>201606140323220_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606210100489_First Change of dbo.Client.cs" />
+    <Compile Include="Migrations\201606210100489_First Change of dbo.Client.Designer.cs">
+      <DependentUpon>201606210100489_First Change of dbo.Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebContextDb.cs" />
+    <Compile Include="WebDeveloperInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebDeveloper.Model\WebDeveloper.Model.csproj">
@@ -62,6 +74,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606140323220_InitialCreate.resx">
+      <DependentUpon>201606140323220_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606210100489_First Change of dbo.Client.resx">
+      <DependentUpon>201606210100489_First Change of dbo.Client.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -61,6 +61,7 @@
       <DependentUpon>201606210100489_First Change of dbo.Client.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ProductData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebContextDb.cs" />
     <Compile Include="WebDeveloperInitializer.cs" />

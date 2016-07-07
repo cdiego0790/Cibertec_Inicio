@@ -4,6 +4,7 @@ using Owin;
 using System.Reflection;
 using WebDeveloper.DataAccess;
 using WebDeveloper.Model;
+using System;
 
 [assembly: OwinStartupAttribute(typeof(WebDeveloper.Startup))]
 namespace WebDeveloper
@@ -12,7 +13,7 @@ namespace WebDeveloper
     {
         public void Configuration(IAppBuilder app)
         {
-            //ConfigureAuth(app);
+            ConfigureAuth(app);
             var container = new ServiceContainer();
             //container.Register<IDataAccess<Client>,ClientData>();
             container.RegisterAssembly(Assembly.GetExecutingAssembly());
@@ -22,5 +23,7 @@ namespace WebDeveloper
             container.RegisterControllers();
             container.EnableMvc();
         }
+
+
     }
 }

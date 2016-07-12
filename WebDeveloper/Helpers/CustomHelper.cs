@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -17,21 +19,19 @@ namespace WebDeveloper.Helpers
         {
             return new HtmlString(GetHtmlForPrice(price));
         }
-
         private static string GetHtmlForPrice(double price)
         {
-            return price == 0.0 ? "<span>Free!!!</span>" : $"<span>{price.ToString()}</span>";
+            return price == 0.0 ? "<span>Free!!!</span>" : $"<span>{price.ToString("C")}</span>";
         }
 
-        public static IHtmlString DisplayDateOrNull(this HtmlHelper helper, DateTime? registrationdate)
+        public static IHtmlString DisplayDateOrNullExtension(this HtmlHelper helper, DateTime? date)
         {
-            return new HtmlString(GetHtmlForDate(registrationdate));
+            return new HtmlString(GetDateHtml(date));
         }
 
-        private static string GetHtmlForDate(DateTime? registrationdate)
-        {
-            return registrationdate.HasValue ? $"<span>{registrationdate.Value.ToString("dd-mm-yyyy")}</span>" : "<span>None</span>";
+        private static string GetDateHtml(DateTime? date)
+        {            
+            return date.HasValue ? $"<span>{date.Value.ToString("dd-mm-yyyy")}</span>" : "None";
         }
-
     }
 }
